@@ -73,7 +73,7 @@
     "is_seller": true
 }
 ```
-![registration.PNG](registration.PNG)
+![registration.PNG](media/registration.PNG)
 
 2. Затем, получите токен для аутентификации на маркетплейсе, отправив POST-запрос на `/drf/users/token/` с данными:
 
@@ -83,7 +83,7 @@
     "password": "12345"
 }
 ```
-![token.PNG](token.PNG)
+![token.PNG](media/token.PNG)
 
 В ответе на этот запрос вы получите токен, который вы будете использовать для аутентификации в следующих запросах к API.
 
@@ -109,7 +109,7 @@
     "price": 100.00
 }
 ```
-![calculate_price.PNG](calculate_price.PNG)
+![calculate_price.PNG](media/calculate_price.PNG)
 
 ### Ответ
 
