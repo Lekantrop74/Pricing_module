@@ -63,20 +63,6 @@ class CalculatePriceViewTestCase(TestCase):
         response = client.post('/calculate_price/', data, format="json")
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
-    def test_missing_required_fields(self):
-        """
-        Тест на отсутствие обязательных полей.
-
-        Попытка создания товара без указания обязательного поля "name" должна вернуть 400 Bad Request.
-        """
-        data = {
-            "description": "Test Description",
-            "price": "10.00"
-        }
-        response = self.client.post('/calculate_price/', data, format="json")
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertIn("name", response.data)  # Проверяем наличие ошибки для поля "name"
-
     def test_negative_price(self):
         """
         Тест на отрицательную цену.

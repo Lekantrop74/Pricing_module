@@ -40,6 +40,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     """
 
     password2 = serializers.CharField()
+    is_seller = serializers.BooleanField(required=False)  # Определяем is_seller как необязательное поле
 
     class Meta:
         model = Users
@@ -62,7 +63,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
             is_superuser=False,
             is_staff=False,
             is_active=True,
-            is_seller=self.validated_data['is_seller']
+            is_seller=self.validated_data.get('is_seller', False)  # Используем get для чтения значения is_seller
         )
 
         password = self.validated_data['password']

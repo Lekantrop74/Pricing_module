@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from rest_framework.response import Response
 
+from Pricing_marketplace_module.permissions import IsSeller
 from Pricing_marketplace_module.serializers import ProductSerializer
 
 # Константы для ставок комиссий
@@ -21,7 +22,7 @@ class CalculatePriceView(generics.CreateAPIView):
     """
 
     serializer_class = ProductSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsSeller]
 
     def calculate_total_price(self, price):
         """
