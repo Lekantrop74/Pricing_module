@@ -106,7 +106,7 @@
 ```json
 {
     "name": "Товар",
-    "price": 100.00
+    "price": 1000.00
 }
 ```
 ![calculate_price.PNG](media/calculate_price.PNG)
@@ -118,7 +118,7 @@
 
 ```json
 {
-  "Итоговая цена": 138.00
+  "Итоговая цена": 1380.00
 }
 ```
 
